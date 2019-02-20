@@ -66,6 +66,8 @@ public class ATM {
         }
 	}
 
+
+
 	/** 
       Deposits amount to current account. 
       (Precondition: state is TRANSACT)
@@ -87,6 +89,13 @@ public class ATM {
             return currentAccount.getBalance();
         }
         return -1;
+	}
+
+	public double getOverdraft() {
+		if (state == TRANSACT) {
+			return currentAccount.getOverdraft();
+		}
+		return -1;
 	}
 
 	public void transfer(int customerNum, double amount) throws NotEnoughBalanceException {

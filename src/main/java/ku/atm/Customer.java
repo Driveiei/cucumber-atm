@@ -7,6 +7,7 @@ public class Customer {
    private int customerNumber;
    private int pin;
    private BankAccount account;
+   private double overdraft;
 
    /**
       Constructs a customer with a given number and PIN.
@@ -17,6 +18,13 @@ public class Customer {
       customerNumber = aNumber;
       pin = aPin;
       account = new BankAccount(currentBalance);
+   }
+
+   public Customer(int aNumber, int aPin, double currentBalance, double overdraft) {
+      customerNumber = aNumber;
+      pin = aPin;
+      account = new BankAccount(currentBalance,overdraft);
+      this.overdraft = overdraft;
    }
 
    public Customer(int aNumber, int aPin) {
